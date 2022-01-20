@@ -50,9 +50,9 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2
-      - names: create docs folder
-        runs: mkdir docs
-      - names: convert md to html
+      - name: create docs folder
+        run: mkdir docs
+      - name: convert md to html
         uses: docker://pandoc/core:2.9
         with: 
           args: userguide.md -t html -o docs/index.html
